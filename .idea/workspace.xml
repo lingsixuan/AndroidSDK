@@ -4,43 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/XML/XML合成器.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/XML/XML解析器.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/安全/hook检测.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/安全/解析响应.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/对话框/对话框.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/工具/ScaleUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/异常类/内存访问错误.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/异常类/打开文件错误.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/异常类/签名损坏.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/异常类/网络操作出错.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/悬浮窗/悬浮窗.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/APP操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/FileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/okhttp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/shell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/共享数据.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/内存操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/加解密操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/应用操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/文件操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/文本操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/时间操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/正则表达式.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/算术运算.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/系统操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/编码操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/网络操作.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/转换操作.java" afterDir="false" />
-    </list>
+    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="添加RSA加密算法" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +32,6 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "E:/JAVA/AndroidSDK/src/main/java",
     "project.structure.last.edited": "工件",
     "project.structure.proportion": "0.15",
@@ -110,6 +73,14 @@
       <option name="presentableId" value="Default" />
       <updated>1661246012888</updated>
     </task>
+    <task id="LOCAL-00001" summary="添加RSA加密算法">
+      <created>1661249831623</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661249831623</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,5 +93,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="添加RSA加密算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加RSA加密算法" />
   </component>
 </project>

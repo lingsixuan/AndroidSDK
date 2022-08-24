@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="添加RSA加密算法" />
+    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="添加RSA加密算法">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/AES.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,11 +43,11 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "E:/JAVA/AndroidSDK/src/main/java",
+    "last_opened_file_path": "E:/JAVA/AndroidSDK",
     "project.structure.last.edited": "工件",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.18174787",
-    "settings.editor.selected.configurable": "Errors"
+    "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -44,7 +55,20 @@
       <recent name="E:\JAVA\AndroidSDK\src\main\java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="应用程序.AES">
+    <configuration name="AES" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ling.android.操作.AES" />
+      <module name="AndroidSDK" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ling.android.操作.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RSA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ling.android.操作.RSA" />
       <module name="AndroidSDK" />
@@ -60,6 +84,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.AES" />
         <item itemvalue="应用程序.RSA" />
       </list>
     </recent_temporary>
@@ -80,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661249831623</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加RSA加密算法">
+      <created>1661250213530</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661250213530</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

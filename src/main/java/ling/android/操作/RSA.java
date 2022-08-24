@@ -34,6 +34,10 @@ public class RSA {
         this.key = key;
     }
 
+    public RSA() throws NoSuchAlgorithmException {
+        this.key = new RSAKey();
+    }
+
     /**
      * 私钥加密的数据只能通过公钥解密，通过此特性可以验证信息来源真实性。
      *

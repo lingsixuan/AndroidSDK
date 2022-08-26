@@ -25,8 +25,16 @@ public class RSA {
      * 密钥长度必须是64的倍数，在512到65536位之间
      */
     private static int KEY_SIZE = 1024;
-    public static String RSA_ALGORITHM = "RSA";
+    public static String RSA_ALGORITHM = "RSA/ECB/PKCS1Padding";
     public static String UTF8 = "UTF-8";
+
+    static {
+        try {
+            KeyFactory.getInstance(RSA_ALGORITHM);
+        } catch (NoSuchAlgorithmException e) {
+            RSA_ALGORITHM = "RSA";
+        }
+    }
 
     private final RSAKey key;
 
@@ -120,7 +128,7 @@ public class RSA {
     /**
      * RSA密钥类
      */
-    static class RSAKey {
+    public static class RSAKey {
         private final byte[] publicKey;
         private final byte[] privateKey;
 

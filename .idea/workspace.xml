@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="添加AES加密算法">
+    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="AES加密添加不适用向量的支持">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/操作/AES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/AES.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,7 @@
       <recent name="E:\JAVA\AndroidSDK\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.AES">
+  <component name="RunManager" selected="应用程序.RSA">
     <configuration name="AES" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ling.android.操作.AES" />
       <module name="AndroidSDK" />
@@ -83,8 +84,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.AES" />
         <item itemvalue="应用程序.RSA" />
+        <item itemvalue="应用程序.AES" />
       </list>
     </recent_temporary>
   </component>
@@ -118,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661305839803</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="AES加密添加不适用向量的支持">
+      <created>1661504181254</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661504181254</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +145,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="添加RSA加密算法" />
     <MESSAGE value="添加AES加密算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加AES加密算法" />
+    <MESSAGE value="AES加密添加不适用向量的支持" />
+    <option name="LAST_COMMIT_MESSAGE" value="AES加密添加不适用向量的支持" />
   </component>
 </project>

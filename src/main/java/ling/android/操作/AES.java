@@ -11,21 +11,30 @@ public class AES {
      */
     private final String key;
     private final String iv;
+    private boolean 向量;
 
     public AES() {
         String temp = 加解密操作.MD5加密(String.valueOf(时间操作.取时间戳()));
         this.key = temp.substring(0, 16);
         this.iv = temp.substring(16, 32);
+        this.向量 = true;
     }
 
     public AES(String key, String iv) {
         this.key = key;
         this.iv = iv;
+        向量 = true;
+    }
+
+    public AES(boolean 向量) {
+        this();
+        this.向量 = 向量;
     }
 
     public AES(String key) {
         this.key = key;
         this.iv = key;
+        this.向量 = false;
     }
 
 
@@ -45,7 +54,11 @@ public class AES {
      */
     public String 加密(String data) {
         try {
-            Cipher cipher = Cipher.getInstance("AES/CBC/NoPadding");
+            Cipher cipher;
+            if (向量)
+                cipher = Cipher.getInstance("AES/CBC/NoPadding");
+            else
+                cipher = Cipher.getInstance("AES");
             int blockSize = cipher.getBlockSize();
             byte[] dataBytes = data.getBytes();
             int plaintextLength = dataBytes.length;
@@ -58,9 +71,11 @@ public class AES {
             System.arraycopy(dataBytes, 0, plaintext, 0, dataBytes.length);
 
             SecretKeySpec keyspec = new SecretKeySpec(key.getBytes(), "AES");
-            IvParameterSpec ivspec = new IvParameterSpec(iv.getBytes());  // CBC模式，需要一个向量iv，可增加加密算法的强度
-
-            cipher.init(Cipher.ENCRYPT_MODE, keyspec, ivspec);
+            if (向量) {
+                IvParameterSpec ivspec = new IvParameterSpec(iv.getBytes());  // CBC模式，需要一个向量iv，可增加加密算法的强度
+                cipher.init(Cipher.ENCRYPT_MODE, keyspec, ivspec);
+            } else
+                cipher.init(Cipher.ENCRYPT_MODE, keyspec);
             byte[] encrypted = cipher.doFinal(plaintext);
 
             return new String(Base64.getEncoder().encode(encrypted)); // BASE64做转码。
@@ -81,12 +96,17 @@ public class AES {
         try {
             byte[] encrypted1 = Base64.getDecoder().decode(data);//先用base64解密
 
-            Cipher cipher = Cipher.getInstance("AES/CBC/NoPadding");
+            Cipher cipher;
+            if (向量)
+                cipher = Cipher.getInstance("AES/CBC/NoPadding");
+            else
+                cipher = Cipher.getInstance("AES");
             SecretKeySpec keyspec = new SecretKeySpec(key.getBytes(), "AES");
-            IvParameterSpec ivspec = new IvParameterSpec(iv.getBytes());
-
-            cipher.init(Cipher.DECRYPT_MODE, keyspec, ivspec);
-
+            if (向量) {
+                IvParameterSpec ivspec = new IvParameterSpec(iv.getBytes());  // CBC模式，需要一个向量iv，可增加加密算法的强度
+                cipher.init(Cipher.ENCRYPT_MODE, keyspec, ivspec);
+            } else
+                cipher.init(Cipher.ENCRYPT_MODE, keyspec);
             byte[] original = cipher.doFinal(encrypted1);
             String originalString = new String(original);
             return originalString.trim();

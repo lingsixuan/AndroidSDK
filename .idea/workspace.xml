@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="RSA加密添加对移动设备的支持">
+    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="实现Java的Base64编码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661506665331</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="实现Java的Base64编码">
+      <created>1661569799282</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661569799282</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +159,7 @@
     <MESSAGE value="添加AES加密算法" />
     <MESSAGE value="AES加密添加不适用向量的支持" />
     <MESSAGE value="RSA加密添加对移动设备的支持" />
-    <option name="LAST_COMMIT_MESSAGE" value="RSA加密添加对移动设备的支持" />
+    <MESSAGE value="实现Java的Base64编码" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现Java的Base64编码" />
   </component>
 </project>

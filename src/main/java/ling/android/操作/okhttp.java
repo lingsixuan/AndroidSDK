@@ -2,24 +2,24 @@ package ling.android.操作;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 public class okhttp {
 
     private Request.Builder builder;
     private OkHttpClient client;
+    private final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();
 
     public okhttp() {
         this.builder = new Request.Builder().addHeader("Content-Type", "text/plain");
-        this.client = new OkHttpClient();
+        this.client = setSaveLoadCookie(new OkHttpClient.Builder()).build();
     }
 
     public okhttp(String host, String sha256) {
@@ -33,7 +33,33 @@ public class okhttp {
             temp.add(证书链.getHost(i), 证书链.getSha256(i));
         }
         CertificatePinner certificatePinner = temp.build();
-        this.client = (new OkHttpClient.Builder()).certificatePinner(certificatePinner).build();
+        this.client = setSaveLoadCookie(new OkHttpClient.Builder()).certificatePinner(certificatePinner).build();
+    }
+
+    public HashMap<String, List<Cookie>> getCookieStore() {
+        return cookieStore;
+    }
+
+    /**
+     * 设置Cookie处理器
+     *
+     * @param builder Okhttp对象
+     * @return Okhttp对象
+     */
+    private OkHttpClient.Builder setSaveLoadCookie(OkHttpClient.Builder builder) {
+        return builder.cookieJar(new CookieJar() {
+            @Override
+            public void saveFromResponse(@NotNull HttpUrl httpUrl, @NotNull List<Cookie> list) {
+                cookieStore.put(httpUrl.host(), list);
+            }
+
+            @NotNull
+            @Override
+            public List<Cookie> loadForRequest(@NotNull HttpUrl httpUrl) {
+                List<Cookie> cookies = cookieStore.get(httpUrl.host());
+                return cookies != null ? cookies : new ArrayList<>();
+            }
+        });
     }
 
 

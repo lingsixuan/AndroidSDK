@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class okhttp {
 
@@ -123,9 +124,10 @@ public class okhttp {
 
                 @Override
                 public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                    回复 temp = new 回复(response);
                     mainHandler.post(() -> {
                         try {
-                            回调.请求完成(call, response);
+                            回调.请求完成(call, temp);
                         } catch (IOException e) {
                             回调.请求出错(call, e);
                         }
@@ -156,9 +158,10 @@ public class okhttp {
 
                 @Override
                 public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                    回复 temp = new 回复(response);
                     mainHandler.post(() -> {
                         try {
-                            回调.请求完成(call, response);
+                            回调.请求完成(call, temp);
                         } catch (IOException e) {
                             回调.请求出错(call, e);
                         }
@@ -170,7 +173,7 @@ public class okhttp {
         public interface 响应 {
             void 请求出错(@NotNull Call call, @NotNull IOException e);
 
-            void 请求完成(@NotNull Call call, @NotNull Response response) throws IOException;
+            void 请求完成(@NotNull Call call, @NotNull 回复 response) throws IOException;
         }
     }
 
@@ -204,5 +207,35 @@ public class okhttp {
             return call.execute();
         }
 
+    }
+
+    public static class 回复 {
+        protected Response response;
+
+        public 回复(Response response) throws IOException {
+            this.response = response;
+        }
+
+        public Response getResponse() {
+            return response;
+        }
+
+        public String getString() {
+            String[] temp = new String[1];
+            Thread thread = new Thread(() -> {
+                try {
+                    temp[0] = Objects.requireNonNull(response.body()).string();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            thread.start();
+            try {
+                thread.join();
+                return temp[0];
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

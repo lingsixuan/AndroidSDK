@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="去除Java的Base64编码">
+    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="为okhttp类添加cookie支持">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/压缩操作.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/对话框/对话框.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/对话框/对话框.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/操作/okhttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/okhttp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +38,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "false",
+    "Repository.Attach.Sources": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "E:/JAVA/AndroidSDK",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/adnroid/platforms/android-32/uiautomator.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "库",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.18174787",
@@ -96,6 +104,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661246012888</updated>
+      <workItem from="1664871445129" duration="389000" />
+      <workItem from="1664871846726" duration="1920000" />
+      <workItem from="1664952204073" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="添加RSA加密算法">
       <created>1661249831623</created>
@@ -146,8 +157,18 @@
       <option name="project" value="LOCAL" />
       <updated>1661572360544</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="为okhttp类添加cookie支持">
+      <created>1662550581513</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662550581513</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -163,12 +184,14 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="添加RSA加密算法" />
     <MESSAGE value="添加AES加密算法" />
     <MESSAGE value="AES加密添加不适用向量的支持" />
     <MESSAGE value="RSA加密添加对移动设备的支持" />
     <MESSAGE value="实现Java的Base64编码" />
     <MESSAGE value="去除Java的Base64编码" />
-    <option name="LAST_COMMIT_MESSAGE" value="去除Java的Base64编码" />
+    <MESSAGE value="为okhttp类添加cookie支持" />
+    <option name="LAST_COMMIT_MESSAGE" value="为okhttp类添加cookie支持" />
   </component>
 </project>

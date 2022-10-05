@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.View;
+import android.view.WindowManager;
 //import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.io.IOException;
@@ -138,7 +139,7 @@ public class 对话框 extends AlertDialog.Builder {
         return this;
     }
 
-    public 对话框 按钮3(String 文本, 按钮点击事件 object,boolean 可取消) {
+    public 对话框 按钮3(String 文本, 按钮点击事件 object, boolean 可取消) {
         setNeutralButton(文本, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -192,6 +193,14 @@ public class 对话框 extends AlertDialog.Builder {
             dialog = create();
         dialog.show();
         显示 = true;
+        return this;
+    }
+
+    public 对话框 显示(int type) {
+        if (dialog == null)
+            dialog = create();
+        dialog.getWindow().setType(type);
+        显示();
         return this;
     }
 

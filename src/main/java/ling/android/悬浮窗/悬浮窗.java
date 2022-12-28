@@ -6,8 +6,9 @@ import android.graphics.PixelFormat;
 import android.os.Build;
 import android.view.*;
 import ling.android.工具.ScaleUtils;
+import ling.android.操作.时间操作;
 
-public class 悬浮窗 extends View {
+public class 悬浮窗 {
     private final static String TAG = "FloatWindow";
     private Context mContext;   //声明一个上下文对象
     private WindowManager wm;   //声明一个窗口管理器对象
@@ -20,13 +21,17 @@ public class 悬浮窗 extends View {
     private boolean isHide = false; //是否正在隐藏
     private boolean isUpdateViewPosition = true;//是否允许移动悬浮窗
     private FloatClickListener mListener;   //声明一个悬浮窗的点击监听对象
+    private FloatLongClickListener mLongListener;   //长按监听
     private int width = WindowManager.LayoutParams.WRAP_CONTENT;    //宽度
     private int height = WindowManager.LayoutParams.WRAP_CONTENT;   //高度
+    private long onTime = 0;    //点按时间
+    private boolean longOnClick = false;
     @SuppressLint("RtlHardcoded")
     private int gravity = Gravity.LEFT | Gravity.TOP;
+    public int type = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY : Build.VERSION.SDK_INT == Build.VERSION_CODES.M ? WindowManager.LayoutParams.TYPE_TOAST : WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
 
     public 悬浮窗(Context context) {
-        super(context);
+
         //从系统服务中获取窗口管理器，后续将通过该管理器添加悬浮窗
         wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         if (wmParams == null) {
@@ -36,7 +41,7 @@ public class 悬浮窗 extends View {
     }
 
     public 悬浮窗(Context context, int width, int height) {
-        super(context);
+
         this.width = ScaleUtils.dip2px(context, width);
         this.height = ScaleUtils.dip2px(context, height);
 
@@ -55,7 +60,7 @@ public class 悬浮窗 extends View {
         //从指定资源编号的布局文件中获取内容视图对象
         mContentView = layout;
         //接管悬浮窗的触摸事件，使之即可随手势拖动，又可处理点击动作
-        mContentView.setOnTouchListener(new OnTouchListener() {
+        mContentView.setOnTouchListener(new View.OnTouchListener() {
             //在发生触摸事件时触发
             @SuppressLint("ClickableViewAccessibility")
             @Override
@@ -66,14 +71,17 @@ public class 悬浮窗 extends View {
                     case MotionEvent.ACTION_DOWN:   //手指按下
                         mDownX = mScreenX;
                         mDownY = mScreenY;
+                        longOnClick = true;
                         break;
                     case MotionEvent.ACTION_MOVE:   //手指移动
                         updateViewPosition();   //更新视图的位置
+                        if (Math.abs(mScreenX - mDownX) > 3 || Math.abs(mScreenY - mDownY) > 3)
+                            longOnClick = false;
                         break;
                     case MotionEvent.ACTION_UP:     //手指松开
                         updateViewPosition();   //更新视图的位置
                         //响应悬浮窗点击事件
-                        if (Math.abs(mScreenX - mDownX) < 3 && Math.abs(mScreenY - mDownY) < 3) {
+                        if (longOnClick && Math.abs(mScreenX - mDownX) < 3 && Math.abs(mScreenY - mDownY) < 3) {
                             if (mListener != null) {
                                 mListener.onFloatClick(v);
                             }
@@ -84,6 +92,13 @@ public class 悬浮窗 extends View {
                 mLastY = mScreenY;
                 return false;
             }
+        });
+        mContentView.setOnLongClickListener((v) -> {
+            if (longOnClick && mLongListener != null) {
+                longOnClick = false;
+                return mLongListener.onFloatLongClick(v);
+            }
+            return false;
         });
         return this;
     }
@@ -115,6 +130,11 @@ public class 悬浮窗 extends View {
         return this;
     }
 
+    public 悬浮窗 setType(int type) {
+        this.type = type;
+        return this;
+    }
+
     /**
      * 显示悬浮窗
      */
@@ -122,7 +142,7 @@ public class 悬浮窗 extends View {
         if (mContentView != null) {
             if (!this.isShowing) {
                 //设置为TYPE_SYSTEM_ALERT类型，才能悬浮在其他页面之上
-                wmParams.type = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY : Build.VERSION.SDK_INT == Build.VERSION_CODES.M ? WindowManager.LayoutParams.TYPE_TOAST : WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+                wmParams.type = this.type;
                 wmParams.format = PixelFormat.RGBA_8888;
                 wmParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
                 wmParams.alpha = 1.0f;      //1.0为完全不透明，0.0为完全透明
@@ -191,10 +211,19 @@ public class 悬浮窗 extends View {
         return this;
     }
 
+    public 悬浮窗 setOnFloatLongListener(FloatLongClickListener longListener) {
+        mLongListener = longListener;
+        return this;
+    }
+
     /**
      * 定义一个悬浮窗的点击监听器接口，用于触发点击行为
      */
     public interface FloatClickListener {
         void onFloatClick(View v);
+    }
+
+    public interface FloatLongClickListener {
+        boolean onFloatLongClick(View v);
     }
 }

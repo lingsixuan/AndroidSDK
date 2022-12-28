@@ -37,6 +37,20 @@ public class 对话框 extends AlertDialog.Builder {
         }
     }
 
+    public 对话框(Context context, int 资源ID) {
+        super(context, 资源ID);
+        this.context = context;
+        //this.builder = new AlertDialog.Builder(context);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            setOnDismissListener((v) -> {
+                显示 = false;
+                if (关闭事件 != null) {
+                    关闭事件.被关闭();
+                }
+            });
+        }
+    }
+
     public 对话框 标题(String 标题) {
         setTitle(标题);
         return this;

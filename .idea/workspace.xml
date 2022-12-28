@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="核心支持库" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="添加对悬浮窗长按事件的支持&#10;添加对话框主题设置" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DkbQHQ8wTEji9010XV0VQaLNRO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/JAVA/AndroidSDK&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.18174787&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;yiiguxing.plugin.translate&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JAVA\AndroidSDK\lib" />
+      <recent name="E:\JAVA\AndroidSDK\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.RSA">
+    <configuration name="AES" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ling.android.操作.AES" />
+      <module name="AndroidSDK" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ling.android.操作.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RSA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ling.android.操作.RSA" />
+      <module name="AndroidSDK" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ling.android.操作.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.RSA" />
+        <item itemvalue="应用程序.AES" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="" />
+      <created>1661246012888</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661246012888</updated>
+      <workItem from="1664871445129" duration="389000" />
+      <workItem from="1664871846726" duration="1920000" />
+      <workItem from="1664952204073" duration="1405000" />
+      <workItem from="1665077073478" duration="39000" />
+      <workItem from="1667478652921" duration="215000" />
+      <workItem from="1667545194334" duration="970000" />
+      <workItem from="1667803674515" duration="17000" />
+      <workItem from="1669295524331" duration="855000" />
+      <workItem from="1669299083478" duration="599000" />
+      <workItem from="1669465333547" duration="11000" />
+      <workItem from="1671225860074" duration="1343000" />
+      <workItem from="1672032002265" duration="194000" />
+      <workItem from="1672197140384" duration="3837000" />
+    </task>
+    <task id="LOCAL-00001" summary="添加RSA加密算法">
+      <created>1661249831623</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661249831623</updated>
+    </task>
+    <task id="LOCAL-00002" summary="添加RSA加密算法">
+      <created>1661250213530</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661250213530</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加AES加密算法">
+      <created>1661305839803</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661305839803</updated>
+    </task>
+    <task id="LOCAL-00004" summary="AES加密添加不适用向量的支持">
+      <created>1661504181254</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661504181254</updated>
+    </task>
+    <task id="LOCAL-00005" summary="RSA加密添加对移动设备的支持">
+      <created>1661506665331</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661506665331</updated>
+    </task>
+    <task id="LOCAL-00006" summary="实现Java的Base64编码">
+      <created>1661569799282</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661569799282</updated>
+    </task>
+    <task id="LOCAL-00007" summary="去除Java的Base64编码">
+      <created>1661572360544</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661572360544</updated>
+    </task>
+    <task id="LOCAL-00008" summary="为okhttp类添加cookie支持">
+      <created>1662550581513</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662550581513</updated>
+    </task>
+    <task id="LOCAL-00009" summary="添加压缩操作，添加对全局对话框的支持">
+      <created>1664952535271</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664952535271</updated>
+    </task>
+    <task id="LOCAL-00010" summary="添加对悬浮窗长按事件的支持&#10;添加对话框主题设置">
+      <created>1672201875339</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1672201875339</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="添加RSA加密算法" />
+    <MESSAGE value="添加AES加密算法" />
+    <MESSAGE value="AES加密添加不适用向量的支持" />
+    <MESSAGE value="RSA加密添加对移动设备的支持" />
+    <MESSAGE value="实现Java的Base64编码" />
+    <MESSAGE value="去除Java的Base64编码" />
+    <MESSAGE value="为okhttp类添加cookie支持" />
+    <MESSAGE value="添加压缩操作，添加对全局对话框的支持" />
+    <MESSAGE value="添加对悬浮窗长按事件的支持&#10;添加对话框主题设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加对悬浮窗长按事件的支持&#10;添加对话框主题设置" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

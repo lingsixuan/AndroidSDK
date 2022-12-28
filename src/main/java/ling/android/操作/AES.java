@@ -180,6 +180,7 @@ public class AES {
         protected String 异常;
 
         public KeyFormatException(String 异常) {
+            super(异常);
             this.异常 = 异常;
         }
 

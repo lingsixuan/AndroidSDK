@@ -1,118 +1,192 @@
 package ling.android.操作;
 
+import org.jetbrains.annotations.NotNull;
+
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 public class AES {
     /*
      * 加密用的Key 可以用26个字母和数字组成 使用AES-128-CBC加密模式，key需要为16位。
      */
-    private final String key;
-    private final String iv;
-    private boolean 向量;
+    private final byte[] key;
+    private final byte[] iv;
+    private final byte[] aad;
 
+    /*public static void main(String[] argc) {
+        AES aes = new AES();
+        String a = "你好，世界";
+        System.out.println(aes.加密(a));
+        System.out.println(aes.解密(aes.加密(a)));
+    }*/
+
+    /*public static void main(String[] args) throws KeyFormatException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidAlgorithmParameterException {
+        String data = "Hello World"; // 待加密的原文
+        String key = "12345678abcdefgh"; // key 长度只能是 16、24 或 32 字节
+        System.out.println(key.getBytes().length);
+        String iv = "iviviviviviviviv";
+        String aad = "aad"; // AAD 长度无限制，可为空
+        AES aes = new AES(new KeyObject(key, iv));
+        byte[] ciphertext = aes.加密(data.getBytes());
+        System.out.println("GCM 模式加密结果（Base64）：" + Base64.getEncoder().encodeToString(ciphertext));
+
+        byte[] plaintext = aes.解密(ciphertext);
+        System.out.println("解密结果：" + new String(plaintext));
+    }*/
+
+    public AES(KeyObject keyObject) {
+        this.key = keyObject.getKey();
+        this.iv = keyObject.getIv();
+        this.aad = keyObject.getAad();
+    }
+
+    /**
+     * @deprecated 此类构造函数在当前的代码实现中已经不便于使用了。建议使用KeyObject类来完成此类需求
+     */
+    @Deprecated(since = "2022-12-28")
     public AES() {
         String temp = 加解密操作.MD5加密(String.valueOf(时间操作.取时间戳()));
-        this.key = temp.substring(0, 16);
-        this.iv = temp.substring(16, 32);
-        this.向量 = true;
+        this.key = temp.substring(0, 16).getBytes();
+        this.iv = temp.substring(16, 32).getBytes();
+        this.aad = "".getBytes();
     }
 
+    /**
+     * @deprecated 此类构造函数在当前的代码实现中已经不便于使用了。建议使用KeyObject类来完成此类需求
+     */
+    @Deprecated(since = "2022-12-28")
     public AES(String key, String iv) {
-        this.key = key;
-        this.iv = iv;
-        向量 = true;
+        this.key = key.getBytes();
+        this.iv = iv.getBytes();
+        this.aad = "".getBytes();
     }
 
+    /**
+     * @deprecated 此类构造函数在当前的代码实现中已经不便于使用了。建议使用KeyObject类来完成此类需求
+     */
+    @Deprecated(since = "2022-12-28")
     public AES(boolean 向量) {
         this();
-        this.向量 = 向量;
     }
 
+    /**
+     * @deprecated 此类构造函数在当前的代码实现中已经不便于使用了。建议使用KeyObject类来完成此类需求
+     */
+    @Deprecated(since = "2022-12-28")
     public AES(String key) {
-        this.key = key;
-        this.iv = key;
-        this.向量 = false;
+        this.key = key.getBytes();
+        this.iv = key.getBytes();
+        this.aad = "".getBytes();
+    }
+
+    public byte[] 加密(byte[] data) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key, "AES"), new GCMParameterSpec(128, iv));
+        cipher.updateAAD(aad);
+        return cipher.doFinal(data);
+    }
+
+    public byte[] 解密(byte[] data) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(key, "AES"), new GCMParameterSpec(128, iv));
+        cipher.updateAAD(aad);
+        return cipher.doFinal(data);
     }
 
 
-    public String getKey() {
+    public byte[] getKey() {
         return key;
     }
 
-    public String getIv() {
+    public byte[] getIv() {
         return iv;
     }
 
-    /**
-     * @param data 明文
-     * @return 密文
-     * @author miracle.qu
-     * @Description AES算法加密明文
-     */
-    public String 加密(String data) {
-        try {
-            Cipher cipher;
-            if (向量)
-                cipher = Cipher.getInstance("AES/CBC/NoPadding");
-            else
-                cipher = Cipher.getInstance("AES");
-            int blockSize = cipher.getBlockSize();
-            byte[] dataBytes = data.getBytes();
-            int plaintextLength = dataBytes.length;
+    public static class KeyObject {
+        protected byte[] key;
+        protected byte[] iv;
+        protected byte[] aad;
 
-            if (plaintextLength % blockSize != 0) {
-                plaintextLength = plaintextLength + (blockSize - (plaintextLength % blockSize));
+        public KeyObject(@NotNull byte[] key, @NotNull byte[] iv, @NotNull byte[] aad) throws KeyFormatException {
+            if (key.length != 16 && key.length != 24 && key.length != 32)
+                throw new KeyFormatException("密钥长度错误！应为16、24或32位，实为" + key.length + "位");
+            if (iv.length != 16)
+                throw new KeyFormatException("向量长度错误！应为16位，实为" + iv.length + "位");
+            this.key = key;
+            this.iv = iv;
+            this.aad = aad;
+        }
+
+        public KeyObject(@NotNull String key, @NotNull String iv, @NotNull String aad) throws KeyFormatException {
+            this(key.getBytes(), iv.getBytes(), aad.getBytes());
+        }
+
+        public KeyObject(@NotNull String key, @NotNull String iv) throws KeyFormatException {
+            this(key.getBytes(), iv.getBytes(), "".getBytes());
+        }
+
+        public KeyObject(@NotNull byte[] key, @NotNull byte[] iv) throws KeyFormatException {
+            this(key, iv, "".getBytes());
+        }
+
+        public static KeyObject init(boolean aad) throws KeyFormatException {
+            String temp = 加解密操作.MD5加密(String.valueOf(时间操作.取时间戳()));
+            byte[] key = temp.substring(0, 16).getBytes();
+            byte[] iv = temp.substring(16, 32).getBytes();
+            if (aad) {
+                return new KeyObject(key, iv, 加解密操作.MD5加密(key).getBytes());
+            } else {
+                return new KeyObject(key, iv, "".getBytes());
             }
+        }
 
-            byte[] plaintext = new byte[plaintextLength];
-            System.arraycopy(dataBytes, 0, plaintext, 0, dataBytes.length);
+        public byte[] getKey() {
+            return key;
+        }
 
-            SecretKeySpec keyspec = new SecretKeySpec(key.getBytes(), "AES");
-            if (向量) {
-                IvParameterSpec ivspec = new IvParameterSpec(iv.getBytes());  // CBC模式，需要一个向量iv，可增加加密算法的强度
-                cipher.init(Cipher.ENCRYPT_MODE, keyspec, ivspec);
-            } else
-                cipher.init(Cipher.ENCRYPT_MODE, keyspec);
-            byte[] encrypted = cipher.doFinal(plaintext);
+        public void setKey(byte[] key) {
+            this.key = key;
+        }
 
-            return new String(Base64.getEncoder().encode(encrypted)); // BASE64做转码。
+        public byte[] getIv() {
+            return iv;
+        }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+        public void setIv(byte[] iv) {
+            this.iv = iv;
+        }
+
+        public byte[] getAad() {
+            return aad;
+        }
+
+        public void setAad(byte[] aad) {
+            this.aad = aad;
         }
     }
 
     /**
-     * @param data 密文
-     * @return 明文
-     * @author miracle.qu
-     * @Description AES算法解密密文
+     * Key格式错误
      */
-    public String 解密(String data) {
-        try {
-            byte[] encrypted1 = Base64.getDecoder().decode(data);//先用base64解密
+    public static class KeyFormatException extends Exception {
+        protected String 异常;
 
-            Cipher cipher;
-            if (向量)
-                cipher = Cipher.getInstance("AES/CBC/NoPadding");
-            else
-                cipher = Cipher.getInstance("AES");
-            SecretKeySpec keyspec = new SecretKeySpec(key.getBytes(), "AES");
-            if (向量) {
-                IvParameterSpec ivspec = new IvParameterSpec(iv.getBytes());  // CBC模式，需要一个向量iv，可增加加密算法的强度
-                cipher.init(Cipher.ENCRYPT_MODE, keyspec, ivspec);
-            } else
-                cipher.init(Cipher.ENCRYPT_MODE, keyspec);
-            byte[] original = cipher.doFinal(encrypted1);
-            String originalString = new String(original);
-            return originalString.trim();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+        public KeyFormatException(String 异常) {
+            this.异常 = 异常;
+        }
+
+        public String get异常() {
+            return 异常;
         }
     }
+
+
 }

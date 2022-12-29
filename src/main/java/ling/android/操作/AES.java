@@ -21,26 +21,6 @@ public class AES {
     private final byte[] iv;
     private final byte[] aad;
 
-    /*public static void main(String[] argc) {
-        AES aes = new AES();
-        String a = "你好，世界";
-        System.out.println(aes.加密(a));
-        System.out.println(aes.解密(aes.加密(a)));
-    }*/
-
-    /*public static void main(String[] args) throws KeyFormatException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidAlgorithmParameterException {
-        String data = "Hello World"; // 待加密的原文
-        String key = "12345678abcdefgh"; // key 长度只能是 16、24 或 32 字节
-        System.out.println(key.getBytes().length);
-        String iv = "iviviviviviviviv";
-        String aad = "aad"; // AAD 长度无限制，可为空
-        AES aes = new AES(new KeyObject(key, iv));
-        byte[] ciphertext = aes.加密(data.getBytes());
-        System.out.println("GCM 模式加密结果（Base64）：" + Base64.getEncoder().encodeToString(ciphertext));
-
-        byte[] plaintext = aes.解密(ciphertext);
-        System.out.println("解密结果：" + new String(plaintext));
-    }*/
 
     public AES(KeyObject keyObject) {
         this.key = keyObject.getKey();

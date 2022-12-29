@@ -28,19 +28,6 @@ public class RSA {
     public static String RSA_ALGORITHM = "RSA/ECB/PKCS1Padding";
     public static String UTF8 = "UTF-8";
 
-    /*public static void main(String[] argv) throws Exception {
-        String 私钥 = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAIY/q1MgMTqaIf1cg29JngyPIccSWlUS9rB4gUCcuYUFwhEhc7iIMaHQNXEcftWZi0AYpOB9lf00XpqCoygsVAVq+cU/dZwK/3aQeJt245pXWDKYcp99NFUw5dKZOjr9hrz3VGmeuQRCL/kmzXNkw91WIHsgde/kCo5UntF9m9kRAgMBAAECgYABE+aGE7B1fBqJAErBVFXXm7gNkzMEsxLmKod+G2v9WoUa8lntmbFNT2C4dF47zIBizrfXIgb32glm4+TXrBhuEir4wcGE19n3vRV0oZR28hPO2KiKjU5lV+slKPnCoOox3zuygvEdoyE5wokb4ebSzTLS5uyZTM1HfaFt8JZ2SQJBAOKlgE0QIsWnOaK0QGZ1XB7K/I5y0lvQZ+oTavo5lOnp327tA4zgsxVPXI3VN1YX/Bv6f+8ssGE9eismz8e2TUkCQQCXorSghHHaVD2iMT6Fd2oswBhvYit6lLGzVX+1bH8Qt+nLB/i0a9U43YCsvWYUiCOiVhp0vML+5ntMmhf2iZWJAkA2PzKUP1ZzRHExFj+Lxm9EF4WXergKrbkRd5BVT87qpcWKwUPmRinW4eXfNLdH7fmzoKNaVbHptFM3XNTCkkmxAkEAkLcVj8QXLHkNQUeiFZp72C2UpGiaeiiC11YXxbvAIOKE2+HFt9rZ6aVr8m/nhlzPNVTbduHXb5Hjxp2hlQaFkQJAaztKhXLfsNTTF6E1MVQgBz3RRsDiUSH7Lpc3Lvft3+q/auhiqMVstl06vAukG8sAVl4GqFX46K5uQnTSramYKw==";
-        String 密文 = "Vn7S8vxII9oO7uqkjNjkIhD1PvGriz+ODZxME5Po0hr1SLWy21Ea42/HQraLQlO2OG3QdXaAIaw3NMcqzW0Bbxaw+yAF5MUna43OSy0k/9NdPtVNVq9QbTfVyA2PA4KjLA6RGAzunqz4hV+j8GBTCXSpZCKLMPXDyawqEWB/K0E=";
-        try {
-            RSA rsa = new RSA(new RSA.RSAKey("", 私钥));
-            String 数据 = new String(rsa.私钥解密(Base64.getDecoder().decode(密文)));
-            System.out.println(数据);
-        } catch (Exception e) {
-            e.printStackTrace();
-            //new 对话框(this).标题("错误").信息(e.getLocalizedMessage()).按钮1("确定").显示();
-        }
-    }*/
-
     private final RSAKey key;
 
     public RSA(RSAKey key) {

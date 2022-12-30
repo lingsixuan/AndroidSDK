@@ -28,6 +28,8 @@ public class 悬浮窗 {
     private boolean longOnClick = false;
     @SuppressLint("RtlHardcoded")
     private int gravity = Gravity.LEFT | Gravity.TOP;
+
+    protected int FLAGS = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
     public int type = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY : Build.VERSION.SDK_INT == Build.VERSION_CODES.M ? WindowManager.LayoutParams.TYPE_TOAST : WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
 
     public 悬浮窗(Context context) {
@@ -135,6 +137,11 @@ public class 悬浮窗 {
         return this;
     }
 
+    public 悬浮窗 setFlags(int flags) {
+        this.FLAGS = flags;
+        return this;
+    }
+
     /**
      * 显示悬浮窗
      */
@@ -144,7 +151,7 @@ public class 悬浮窗 {
                 //设置为TYPE_SYSTEM_ALERT类型，才能悬浮在其他页面之上
                 wmParams.type = this.type;
                 wmParams.format = PixelFormat.RGBA_8888;
-                wmParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+                wmParams.flags = FLAGS;
                 wmParams.alpha = 1.0f;      //1.0为完全不透明，0.0为完全透明
                 //对齐方式为靠左且靠上，因此悬浮窗的初始位置在屏幕的坐上角
                 wmParams.gravity = this.gravity;

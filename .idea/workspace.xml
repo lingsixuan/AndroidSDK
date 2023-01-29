@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="删除被注释的代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/悬浮窗/悬浮窗.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/悬浮窗/悬浮窗.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/JAVA/AndroidSDK",
+    "aspect.path.notification.shown": "true",
+    "last_opened_file_path": "C:/JAVA/AndroidSDK",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -128,6 +129,11 @@
       <workItem from="1672288164518" duration="784000" />
       <workItem from="1672391642141" duration="14000" />
       <workItem from="1672402957175" duration="1540000" />
+      <workItem from="1672507034674" duration="25000" />
+      <workItem from="1672507129262" duration="13000" />
+      <workItem from="1672507264420" duration="46000" />
+      <workItem from="1674963870591" duration="1121000" />
+      <workItem from="1674967104454" duration="3414000" />
     </task>
     <task id="LOCAL-00001" summary="添加RSA加密算法">
       <created>1661249831623</created>
@@ -244,7 +250,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>

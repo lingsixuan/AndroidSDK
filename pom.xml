@@ -176,13 +176,13 @@
             <scope>system</scope>
             <systemPath>${basedir}/lib/okio-jvm-3.0.0-sources.jar</systemPath>
         </dependency>-->
-        <dependency>
+        <!--<dependency>
             <groupId>ling.json.jar</groupId>
             <artifactId>modbus4j</artifactId>
             <version>3.0.3</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/ling.json.jar</systemPath>
-        </dependency>
+            <systemPath>${basedir}/lib/org.json.jar</systemPath>
+        </dependency>-->
     </dependencies>
 
 </project>

@@ -2,6 +2,7 @@ package ling.android.操作;
 
 import android.annotation.TargetApi;
 import android.os.Build;
+import ling.android.工具.Base64;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -13,7 +14,6 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.Base64;
 
 /**
  * RSA算法实现类

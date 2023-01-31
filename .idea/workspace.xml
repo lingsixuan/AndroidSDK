@@ -10,9 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a552f1d-a177-48e1-8125-a3456cce3b3d" name="变更" comment="删除被注释的代码">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ling/android/工具/Base64.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/操作/okhttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/okhttp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ling/android/操作/RSA.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +70,9 @@
       <recent name="C:\JAVA\AndroidSDK\lib" />
       <recent name="E:\JAVA\AndroidSDK\lib" />
       <recent name="E:\JAVA\AndroidSDK\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ling.android.工具" />
     </key>
   </component>
   <component name="RunManager" selected="应用程序.okhttp">
@@ -150,7 +154,7 @@
       <workItem from="1672507264420" duration="46000" />
       <workItem from="1674963870591" duration="1121000" />
       <workItem from="1674967104454" duration="5068000" />
-      <workItem from="1675123993358" duration="4872000" />
+      <workItem from="1675123993358" duration="7432000" />
     </task>
     <task id="LOCAL-00001" summary="添加RSA加密算法">
       <created>1661249831623</created>
